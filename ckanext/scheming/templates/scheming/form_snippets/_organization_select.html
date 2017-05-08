@@ -13,7 +13,7 @@ not used as a form_snippet directly #}
     ) %}
      <div class="control-group">
       <!-- <label for="field-organizations" class="control-label">{{ _("Organization") }}</label>   -->
-      <div class="controls">
+      <!--<div class="controls"> -->
         <select id="field-organizations" name="owner_org" data-module="autocomplete">
           {% if h.check_config_permission('create_unowned_dataset') %}
              <option value="" {% if not selected_org and data.id %} selected="selected" {% endif %}>{{ _('No organization') }}</option>
@@ -24,7 +24,7 @@ not used as a form_snippet directly #}
             <option value="{{ organization.id }}" {% if selected_org %} selected="selected" {% endif %}>{{ organization.display_name }}</option>
           {% endfor %}
         </select>
-      </div>
+      <!--</div>  -->
   {% endcall %}
 {% endmacro %}
 
