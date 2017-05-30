@@ -16,96 +16,73 @@
       "form_placeholder": "eg. arboles-de-"
     },
     {
-      "field_name": "version",
-      "label": "Version",
-      "validators": "ignore_missing int_validator",
-      "form_placeholder": "eg. 2"
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Some useful notes about the data"
     },
-
+    {
+      "field_name": "author",
+      "label": "Autor",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator"
+    },
+    {
+      "field_name": "authors",
+      "preset": "repeating_text",
+      "label": "Colaboradores",
+      "form_blanks": 2
+    },
+    {
+      "field_name": "license_id",
+      "label": "License",
+      "form_snippet": "license.html",
+      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
+    },
+    {
+      "field_name": "author_email",
+      "label": "Correo Electrónico",
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:creator",
+      "display_snippet": "email.html",
+      "display_email_name_field": "author"
+    },
     {
       "field_name": "owner_org",
       "label": "Organizacion",
       "preset": "dataset_organization"
     },
-
     {
-      "field_name": "category",
-      "label": "Categoria",
-      "help_text": "Seleccione una categoria",
-      "help_inline": true,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "categoria1",
-          "label": "Categoria 1"
-        },
-        {
-          "value": "categoria2",
-          "label": "Categoria 2"
-        },
-        {
-          "value": "categoria3",
-          "label": "Categoria 3"
-        },
-        {
-          "value": "otracategoria",
-          "label": "Otra Categoria"
-        }
-      ]
-    },
-    {
-      "field_name": "checkbutton",
-      "label": "Opciones",
-      "preset": "multiple_checkbox",
-      "choices": [
-        {
-          "value": "opcion1",
-          "label": "Opcion 1"
-        },
-        {
-          "value": "opcion2",
-          "label": "Opcion 2"
-        },
-        {
-          "value": "opcion3",
-          "label": "Opcion 3"
-        }
-      ]
-    },
-    {
-      "field_name": "authors",
-      "preset": "repeating_text",
-      "label": "Autores",
-      "form_blanks": 3
-    },
-    {
-      "field_name": "other",
-      "label": {"en": "Other information"},
-      "output_validators": "ignore_missing"
+      "field_name": "version",
+      "label": "Version",
+      "validators": "ignore_missing int_validator",
+      "form_placeholder": "eg. 2"
     }
+
   ],
   "resource_fields": [
     {
       "field_name": "url",
       "label": "Recurso",
       "preset": "resource_url_upload",
-      "form_placeholder": "http://example.com/my-camel-photo.jpg",
+      "form_placeholder": "http://inia.es/datos/arboles.csv",
       "upload_label": "Archivo"
     },
     {
-      "field_name": "infoextra",
-      "label": "Informacion Extra",
-      "output_validators": "ignore_missing"
+      "field_name": "name",
+      "label": "Nombre del Recurso",
+      "form_placeholder": "eg. January 2011 Gold Prices"
     },
     {
-      "field_name": "datetime",
-      "label": "Fecha",
-      "label_time": "Time Taken"
+      "field_name": "description",
+      "label": "Descripción",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Some useful notes about the data"
+    },
+    {
+      "field_name": "format",
+      "label": "Formato",
+      "preset": "resource_format_autocomplete"
     }
   ]
 }
-
-
-
-
-
