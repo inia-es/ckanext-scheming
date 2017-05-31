@@ -122,7 +122,7 @@
     },
     {
       "field_name": "datamodelspecific",
-      "label": "Data Model - Specific Data Model",
+      "label": "Data Model - Specific Data Model"
     },
     {
       "field_name": "datavolume",
