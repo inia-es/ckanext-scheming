@@ -30,17 +30,6 @@
       "label": "Short Description",
       "form_snippet": "markdown.html",
       "form_placeholder": "Plain text"
-    },
-    {
-      "field_name": "extendeddescription",
-      "label": "Extended Description",
-      "form_snippet": "markdown.html",
-      "form_placeholder": "Plain text"
-    },
-    {
-      "field_name": "version",
-      "label": "Version",
-      "form_placeholder": "eg. v1.0"
     }
   ],
   "resource_fields": [
