@@ -177,7 +177,7 @@
       "field_name": "uri",
       "label": "URI",
       "form_placeholder": "eg. https://data.gov.uk/dataset/nptg"
-    },
+    }
   ],
   "resource_fields": [
     {
