@@ -65,7 +65,7 @@
            "value": "no",
            "label": "No"
          }
-                 ]
+       ]
     },
     {
       "field_name": "license",
@@ -98,12 +98,12 @@
     {
       "field_name": "technology",
       "label": "Technology",
-      "form_placeholder": "eg. REST, WEB SERVICE SOAP, CSV, Data stream, OGC exchange service (WMS,…)"
+      "form_placeholder": "eg. REST, WEB SERVICE SOAP, CSV, Data stream, OGC exchange service (WMS,)"
     },
     {
       "field_name": "namesystem",
       "label": "Name of the System",
-      "form_placeholder": "eg. eParking, BCBP (Bar Coded Boarding Passes), …"
+      "form_placeholder": "eg. eParking, BCBP (Bar Coded Boarding Passes), "
     },
     {
       "field_name": "datasetmodel",
