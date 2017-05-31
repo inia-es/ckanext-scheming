@@ -55,7 +55,9 @@
     {
       "field_name": "personaldata",
       "label": "Personal Data",
-      "preset": "multiple_checkbox",
+      "help_text": "yes or no",
+      "help_inline": true,
+      "preset": "select",
       "choices": [
          {
            "value": "yes",
@@ -152,7 +154,9 @@
     {
       "field_name": "accesslevel",
       "label": "Access Level",
-      "preset": "multiple_checkbox",
+      "help_text": "With Approval, Without Approval or Open",
+      "help_inline": true,
+      "preset": "select",
       "choices": [
          {
            "value": "withapproval",
