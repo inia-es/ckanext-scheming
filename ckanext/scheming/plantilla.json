@@ -67,11 +67,13 @@
            "value": "no",
            "label": "No"
          }
-                 ]
+      ]
     },
     {
-      "field_name": "license",
+      "field_name": "license_id",
       "label": "License",
+      "form_snippet": "license.html",
+      "help_text": "License definitions and additional information can be found at http://opendefinition.org/",
       "form_placeholder": "eg. https://creativecommons.org/licenses/by/4.0/"
     },
     {
