@@ -79,14 +79,14 @@
     {
       "field_name": "fechacreacion",
       "label": "Fecha de creación",
-      "label_time": "Time Taken",
-      "preset": "datetime"
+      "form_placeholder": "Formato: año-mes-dia     Ejemplo: 2016-09-25"
+      "preset": "date"
     },
     {
       "field_name": "fechamodificacion",
       "label": "Fecha de modificación",
-      "label_time": "Time Taken",
-      "preset": "datetime"
+      "form_placeholder": "Formato: año-mes-dia     Ejemplo: 2016-09-28"
+      "preset": "date"
     },
     {
       "field_name": "informaciongeografica",
