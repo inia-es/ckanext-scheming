@@ -5,7 +5,7 @@
   "dataset_fields": [
     {
       "field_name": "title",
-      "label": "Titulo",
+      "label": "Título",
       "preset": "title",
       "form_placeholder": "eg. Larry, Peter, Susan"
     },
@@ -17,7 +17,7 @@
     },
     {
       "field_name": "notes",
-      "label": "Description",
+      "label": "Descripción",
       "form_snippet": "markdown.html",
       "form_placeholder": "eg. Some useful notes about the data"
     },
@@ -34,10 +34,85 @@
       "form_blanks": 2
     },
     {
+      "field_name": "tematica",
+      "label": "Temática",
+      "form_placeholder": "Campo o área de investigación"
+    },
+    {
       "field_name": "license_id",
-      "label": "License",
+      "label": "Licencia",
       "form_snippet": "license.html",
-      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
+      "help_text": "Información adicional sobre licencias se puede encontrar en http://opendefinition.org/"
+    },
+    {
+      "field_name": "dddyp",
+      "label": "Declaración de Derechos y Privacidad",
+      "form_placeholder": "Declaración de ..."
+    },
+    {
+      "field_name": "licenciaabierta",
+      "label": "Licencia Abierta",
+      "help_text": "Si o No",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+         {
+           "value": "si",
+           "label": "Si"
+         }, 
+         {
+           "value": "no",
+           "label": "No"
+         }
+      ]
+    },
+    {
+      "field_name": "localizables",
+      "label": "Localizables",
+      "form_placeholder": "..."
+    },
+    {
+      "field_name": "recursosrelacionados",
+      "label": "Recursos relacionados",
+      "form_placeholder": "..."
+    },
+    {
+      "field_name": "fechacreacion",
+      "label": "Fecha de creación",
+      "form_placeholder": "Formato: año-mes-día     Ejemplo: 2016-09-25",
+      "preset": "date"
+    },
+    {
+      "field_name": "fechamodificacion",
+      "label": "Fecha de modificación",
+      "form_placeholder": "Formato: año-mes-día     Ejemplo: 2016-09-28",
+      "preset": "date"
+    },
+    {
+      "field_name": "informaciongeografica",
+      "label": "Información geográfica",
+      "form_placeholder": "..."
+    },
+    {
+      "field_name": "idioma",
+      "label": "Idioma",
+      "help_text": "Idioma del dataset",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+         {
+           "value": "ingles",
+           "label": "English/Ingles"
+         }, 
+         {
+           "value": "español",
+           "label": "Spanish/Español"
+         },
+         {
+           "value": "otro",
+           "label": "Otro"
+         }
+      ]
     },
     {
       "field_name": "author_email",
@@ -53,8 +128,13 @@
       "preset": "dataset_organization"
     },
     {
+      "field_name": "docdelosdatos",
+      "label": "Documentación de los datos",
+      "form_placeholder": "Documentación..."
+    },
+    {
       "field_name": "version",
-      "label": "Version",
+      "label": "Versión",
       "validators": "ignore_missing int_validator",
       "form_placeholder": "eg. 2"
     }
@@ -83,6 +163,28 @@
       "field_name": "format",
       "label": "Formato",
       "preset": "resource_format_autocomplete"
+    },
+    {
+      "field_name": "Distribuciones",
+      "label": "Distribuciones",
+      "form_placeholder": "Distribuciones..."
+    },
+    {
+      "field_name": "formatoabierto",
+      "label": "Formato Abierto",
+      "help_text": "Si o No",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+         {
+           "value": "si",
+           "label": "Si"
+         }, 
+         {
+           "value": "no",
+           "label": "No"
+         }
+      ]
     }
   ]
 }
