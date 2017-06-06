@@ -5,7 +5,7 @@
   "dataset_fields": [
     {
       "field_name": "title",
-      "label": "Titulo",
+      "label": "Título",
       "preset": "title",
       "form_placeholder": "eg. Larry, Peter, Susan"
     },
@@ -17,7 +17,7 @@
     },
     {
       "field_name": "notes",
-      "label": "Description",
+      "label": "Descripción",
       "form_snippet": "markdown.html",
       "form_placeholder": "eg. Some useful notes about the data"
     },
@@ -40,7 +40,7 @@
     },
     {
       "field_name": "license_id",
-      "label": "License",
+      "label": "Licencia",
       "form_snippet": "license.html",
       "help_text": "Información adicional sobre licencias se puede encontrar en http://opendefinition.org/"
     },
@@ -79,13 +79,13 @@
     {
       "field_name": "fechacreacion",
       "label": "Fecha de creación",
-      "form_placeholder": "Formato: año-mes-dia     Ejemplo: 2016-09-25"
+      "form_placeholder": "Formato: año-mes-día     Ejemplo: 2016-09-25",
       "preset": "date"
     },
     {
       "field_name": "fechamodificacion",
       "label": "Fecha de modificación",
-      "form_placeholder": "Formato: año-mes-dia     Ejemplo: 2016-09-28"
+      "form_placeholder": "Formato: año-mes-día     Ejemplo: 2016-09-28",
       "preset": "date"
     },
     {
@@ -134,7 +134,7 @@
     },
     {
       "field_name": "version",
-      "label": "Version",
+      "label": "Versión",
       "validators": "ignore_missing int_validator",
       "form_placeholder": "eg. 2"
     }
