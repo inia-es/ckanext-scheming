@@ -13,10 +13,11 @@
 {% block package_additional_info %}
   {%- for field in schema.dataset_fields -%}
     {%- if field.field_name not in exclude_fields
-        and field.display_snippet is not none -%}
+        and field.display_snippet is not none 
+		and 'subfield' not in field.field_name -%}
       <tr>
         <th scope="row" class="dataset-label">{{
-          h.scheming_language_text(field.label) }}</th>
+          h.scheming_language_text(field.label) }} </th>
         <td class="dataset-details"{%
           if field.display_property %} property="{{ field.display_property
           }}"{% endif %}>{%- snippet 'scheming/snippets/display_field.html',

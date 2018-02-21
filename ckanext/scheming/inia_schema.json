@@ -5,9 +5,26 @@
   "dataset_fields": [
     {
       "field_name": "title",
-      "label": "Título",
+      "label": "Título 1",
       "preset": "title",
-      "form_placeholder": "eg. Larry, Peter, Susan"
+      "form_placeholder": "Plantas provenientes de ... "
+    },
+    {
+      "field_name": "idiomatitulo1",
+      "label": "Idioma Título 1",
+      "help_text": "Idioma del titulo 1",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+         {
+           "value": "inglestitulo1",
+           "label": "Ingles"
+         }, 
+         {
+           "value": "espanoltitulo1",
+           "label": "Español"
+         }
+      ]
     },
     {
       "field_name": "name",
@@ -15,83 +32,263 @@
       "preset": "dataset_slug",
       "form_placeholder": "eg. arboles-de-"
     },
+
     {
-      "field_name": "notes",
-      "label": "Descripción",
-      "form_snippet": "markdown.html",
-      "form_placeholder": "eg. Some useful notes about the data"
+      "field_name": "title2",
+      "label": "Título 2",
+      "form_placeholder": ""
     },
     {
-      "field_name": "author",
-      "label": "Autor",
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:creator"
-    },
-    {
-      "field_name": "authors",
-      "preset": "repeating_text",
-      "label": "Colaboradores",
-      "form_blanks": 2
-    },
-    {
-      "field_name": "tematica",
-      "label": "Temática",
-      "form_placeholder": "Campo o área de investigación"
-    },
-    {
-      "field_name": "license_id",
-      "label": "Licencia",
-      "form_snippet": "license.html",
-      "help_text": "Información adicional sobre licencias se puede encontrar en http://opendefinition.org/"
-    },
-    {
-      "field_name": "dddyp",
-      "label": "Declaración de Derechos y Privacidad",
-      "form_placeholder": "Declaración de ..."
-    },
-    {
-      "field_name": "licenciaabierta",
-      "label": "Licencia Abierta",
-      "help_text": "Si o No",
+      "field_name": "idiomatitulo2",
+      "label": "Idioma Título 2",
+      "help_text": "Idioma del titulo 2",
       "help_inline": true,
       "preset": "select",
       "choices": [
          {
-           "value": "si",
-           "label": "Si"
+           "value": "espanoltitulo2",
+           "label": "Español"
          }, 
          {
-           "value": "no",
-           "label": "No"
+           "value": "inglestitulo2",
+           "label": "Ingles"
          }
       ]
     },
     {
-      "field_name": "localizables",
-      "label": "Localizables",
-      "form_placeholder": "..."
+      "field_name": "notes",
+      "label": "Descripción",
+      "required": true,
+      "form_snippet": "markdown.html",
+      "form_placeholder": "ej. Alguna descripción sobre el conjunto de datos"
     },
     {
-      "field_name": "recursosrelacionados",
-      "label": "Recursos relacionados",
-      "form_placeholder": "..."
+      "field_name": "owner_org",
+      "label": "Organización del Dataset",
+      "preset": "dataset_organization"
     },
     {
-      "field_name": "fechacreacion",
-      "label": "Fecha de creación",
-      "form_placeholder": "Formato: año-mes-día     Ejemplo: 2016-09-25",
+      "field_name": "autores",
+      "preset": "repeating_group_fields",
+      "label": "Autor",
+      "field_name_subfields": ["subfield_email", "subfield_orcid","subfield_select_org_dep","subfield_select2_org_dep","subfield_other_organization"],
+      "field_label_subfields": ["Email", "Orcid", "Departamento", "Departamento INIA","Organizacion"],
+      "form_blanks": 8
+    },
+    {
+      "field_name": "subfield_email",
+      "preset": "repeating_single_in_group_fields",
+      "label": "Email",
+      "form_blanks": 8
+    },   
+    {
+      "field_name": "subfield_select_org_dep",
+      "preset": "repeating_select_org_dep_in_group",
+      "label": "Departamento",
+      "field_name_subfields": ["subfield_select2_org_dep","subfield_other_organization"],
+      "form_blanks": 8,
+      "choices": [
+         {
+           "value": "INIA",
+           "label": "INIA"
+         },
+         {
+           "value": "Otro",
+           "label": "Otro"
+         }
+      ]
+    },
+    {
+      "field_name": "subfield_select2_org_dep",
+      "preset": "repeating_select2_org_dep_in_group",
+      "label": "Departamento INIA",
+      "form_blanks": 8,
+      "choices": [
+         {
+           "value": "CIFOR",
+           "label": "CIFOR"
+         },
+         {
+           "value": "CISA",
+           "label": "CISA"
+         },
+	 {
+	   "value": "CRF",
+           "label": "CRF"
+         },
+         {
+           "value": "ninguno",
+           "label": "ninguno"
+         }
+      ]
+     },
+     {
+      "field_name": "subfield_other_organization",
+      "preset": "repeating_single_in_group_fields",
+      "label": "Organization",
+      "form_blanks": 8
+    },
+    {
+      "field_name": "subfield_orcid",
+      "preset": "repeating_single_in_group_fields",
+      "label": "Orcid",
+      "form_blanks": 8
+    },
+    {
+      "field_name": "contacto",
+      "label": "Contacto",
+      "required": true,
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator"
+    },
+    {
+      "field_name": "contacto_email",
+      "label": "Email Contacto",
+      "required": true,
+      "form_placeholder": "contacto@example.com",
+      "display_property": "dc:creator",
+      "display_snippet": "email.html",
+      "display_email_name_field": "author"
+    },
+    {
+      "field_name": "colaboradores",
+      "preset": "repeating_group_fields",
+      "label": "Colaborador",
+      "field_name_subfields": ["subfield_select_rol", "subfield_organizacion_colaborador"],
+      "field_label_subfields": ["Rol", "Organizacion"],
+      "form_blanks": 8
+    },
+    {
+      "field_name": "subfield_select_rol",
+      "preset": "repeating_select_basic",
+      "label": "Rol",
+      "form_blanks": 8,
+      "choices": [
+         {
+           "value": "datacollector",
+           "label": "Data Collector"
+         },
+         {
+           "value": "datacuratos",
+           "label": "Data Curator"
+         },
+         {
+           "value": "datamanager",
+           "label": "Data Manager"
+         },
+         {
+           "value": "distributor",
+           "label": "Distributor"
+         },
+         {
+           "value": "editor",
+           "label": "Editor"
+         },
+         {
+           "value": "hostinginstitution",
+           "label": "Hosting Institution"
+         },
+         {
+           "value": "producer",
+           "label": "Producer"
+         },
+         {
+           "value": "projectleader",
+           "label": "Project Leader"
+         },
+         {
+           "value": "projectmanager",
+           "label": "Project Manager"
+         },
+         {
+           "value": "projectmember",
+           "label": "Project Member"
+         },
+         {
+           "value": "registrationagency",
+           "label": "Registration Agency"
+         },
+         {
+           "value": "registrationauthority",
+           "label": "Registration Authority"
+         },
+         {
+           "value": "relatedperson",
+           "label": "Related Person"
+         },
+         {
+           "value": "researcher",
+           "label": "Researcher"
+         },
+         {
+           "value": "researchgroup",
+           "label": "Research Group"
+         },
+         {
+           "value": "rightsholder",
+           "label": "Rights Holder"
+         },
+         {
+           "value": "sponsor",
+           "label": "Sponsor"
+         },
+         {
+           "value": "supervisor",
+           "label": "Supervisor"
+         },
+         {
+           "value": "workpackageleader",
+           "label": "Work Package Leader"
+         },
+         {
+           "value": "other",
+           "label": "Other"
+         }
+      ]
+    },
+    {
+      "field_name": "subfield_organizacion_colaborador",
+      "preset": "repeating_single_in_group_fields",
+      "label": "Organizacion",
+      "form_blanks": 8
+    },
+    {
+      "field_name": "organismo",
+      "label": "Organismo",
+      "required": true,
+      "field_text": "INIA",
+      "preset": "custom_text"
+    },
+    {
+      "field_name": "fechapublicaion",
+      "label": "Fecha de Publicación",
+      "required": true,
+      "form_placeholder": "Formato: a  o-mes-d  a     Ejemplo: 2016-09-25",
       "preset": "date"
     },
     {
-      "field_name": "fechamodificacion",
-      "label": "Fecha de modificación",
-      "form_placeholder": "Formato: año-mes-día     Ejemplo: 2016-09-28",
-      "preset": "date"
+      "field_name": "tag_string",
+      "label": "Palabras Clave",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "eg. economy, mental health, government"
     },
     {
-      "field_name": "informaciongeografica",
-      "label": "Información geográfica",
-      "form_placeholder": "..."
+      "field_name": "doi",
+      "label": "DOI"
+    },
+    {
+      "field_name": "tematic_agrovoc_name",
+      "label": "temática",
+      "preset": "tematic_agrovoc_name",
+      "required": "true",
+      "form_placeholder": "Temática"
+    },
+    {
+      "field_name": "tematica",
+      "preset": "auto_text_vocabulary",
+      "label": "Temática",
+      "required": true,
+      "form_placeholder": "Campo o área de investigación"
     },
     {
       "field_name": "idioma",
@@ -102,11 +299,11 @@
       "choices": [
          {
            "value": "ingles",
-           "label": "English/Ingles"
-         }, 
+           "label": "en"
+         },
          {
-           "value": "español",
-           "label": "Spanish/Español"
+           "value": "espa  ol",
+           "label": "es"
          },
          {
            "value": "otro",
@@ -115,30 +312,381 @@
       ]
     },
     {
-      "field_name": "author_email",
-      "label": "Correo Electrónico",
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:creator",
-      "display_snippet": "email.html",
-      "display_email_name_field": "author"
+      "field_name": "nombre_proyecto",
+      "label": "Nombre del Proyecto",
+      "form_placeholder": "Nombre del proyecto en el cual se ha creado el dataset"
     },
     {
-      "field_name": "owner_org",
-      "label": "Organizacion",
-      "preset": "dataset_organization"
+      "field_name": "entefinanciador_proyecto",
+      "label": "Ente financiador",
+      "form_placeholder": "organización o convocatoria/organización"
     },
     {
-      "field_name": "docdelosdatos",
-      "label": "Documentación de los datos",
-      "form_placeholder": "Documentación..."
+      "field_name": "webfinanciador_proyecto",
+      "label": "Web del financiador",
+      "form_placeholder": "url"
     },
     {
-      "field_name": "version",
-      "label": "Versión",
+      "field_name": "codigoproyecto_proyecto",
+      "label": "Código de proyecto",
+      "form_placeholder": ""
+    }, 
+    {
+      "field_name": "fechainicio_ambitotemporal",
+      "label": "Ámbito temporal (fecha inicio)",
+      "form_placeholder": "Formato: a  o-mes-d  a     Ejemplo: 2016-09-25",
+      "preset": "date"
+    },
+    {
+      "field_name": "fechafinal_ambitotemporal",
+      "label": "Ámbito temporal (fecha final)",
+      "form_placeholder": "Formato: a  o-mes-d  a     Ejemplo: 2016-09-28",
+      "preset": "date"
+    },
+    {
+      "field_name": "descripcion_ambitotemporal",
+      "label": "Ámbito temporal (Descripciòn)",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Descripción textual periodo de tiempo relacionado con el contenido o la toma de muestras del Dataset, este metadato está especialmente indicado en los ámbitos de investigación donde es habitual  expresar los periodos se de manera textual por ejemplos: siglo XVI, Edad media."
+    },
+    {
+      "field_name": "texto_ambitogeografico",
+      "label": "Ámbito Geográfico (localización)"
+    },
+    {
+      "field_name": "latitudizq_ambitogeografico",
+      "label": "Ámbito Geográfico (latitud esquina superior)"
+    },
+    {
+      "field_name": "longitudizq_ambitogeografico",
+      "label": "Ámbito Geográfico (longitud esquina superior)"
+    },
+    {
+      "field_name": "latituddcha_ambitogeografico",
+      "label": "Ámbito Geográfico (latitud esquina inferior)"
+    },
+    {
+      "field_name": "longituddcha_ambitogeografico",
+      "label": "Ámbito Geográfico (longitud esquina inferior)"
+    },
+   {
+      "field_name": "taxonomias",
+      "preset": "repeating_group_fields",
+      "label": "Ámbito Taxonómico",
+      "field_name_subfields": ["subfield_categoria_taxonomica", "subfield_categoria_taxonomica_valor","subfield_nombre_comun","subfield_uri_categoria"],
+      "field_label_subfields": ["Categoría Taxonómica", "Categoría Taxonómica (Valor)", "Nombre Común", "URI Categoría"],
+      "form_blanks": 8
+    },
+    {
+      "field_name": "subfield_categoria_taxonomica",
+      "preset": "repeating_select_basic",
+      "label": "Categoría Taxonómica",
+      "choices": [
+         {
+           "value": "kingdom",
+           "label": "Kingdom"
+         },
+         {
+           "value": "phylum",
+           "label": "Phylum"
+         },
+         {
+           "value": "class",
+           "label": "Class"
+         },
+         {
+           "value": "order",
+           "label": "Order"
+         },
+	 {
+           "value": "family",
+           "label": "Family"
+         },
+         {
+           "value": "genus",
+           "label": "Genus"
+         },
+         {
+           "value": "specie",
+           "label": "Specie"
+         }
+      ],
+      "form_blanks": 8
+    },
+    {
+      "field_name": "subfield_categoria_taxonomica_valor",
+      "preset": "repeating_single_in_group_fields",
+      "label": "Categoría Taxonómica (Valor)",
+      "form_blanks": 8
+    },
+    {
+      "field_name": "subfield_nombre_comun",
+      "preset": "repeating_single_in_group_fields",
+      "label": "Nombre Común",
+      "form_blanks": 8
+    },
+    {
+      "field_name": "subfield_uri_categoria",
+      "preset": "repeating_single_in_group_fields",
+      "label": "URI Categoría",
+      "form_blanks": 8
+    },
+    {
+      "field_name": "politicas_de_uso",
+      "label": "Políticas de Uso",
+      "required": true,
+      "preset": "select",
+      "choices": [
+         {
+           "value": "creative_commons_attribution",
+           "label": "Creative Commons Attribution"
+         },
+         {
+           "value": "creative_commons_attribution_share",
+           "label": "Creative Commons Attribution Share-Alike"
+         },
+         {
+           "value": "creative_commons_cczero",
+           "label": "Creative Commons CCZero"
+         },
+         {
+           "value": "creative_commons_noncommercial",
+           "label": "Creative Commons Non-Commercial (Any)"
+         },
+         {
+           "value": "gnu_free_documentation_license",
+           "label": "GNU Free Documentation License"
+         },
+         {
+           "value": "license_not_specified",
+           "label": "License not specified"
+         },	 
+         {
+           "value": "open_data_commons_attribution_license",
+           "label": "Open Data Commons Attribution License"
+         },
+         {
+           "value": "odbl",
+           "label": "Open Data Commons Open Database License (ODbL)"
+         },
+         {
+           "value": "pddl",
+           "label": "Open Data Commons Public Domain Dedication and License (PDDL)"
+         },
+         {
+           "value": "other_attribution",
+           "label": "Other (Attribution)"
+         },
+         {
+           "value": "other_noncommercial",
+           "label": "Other (Non-Commercial)"
+         },
+         {
+           "value": "other_not_open",
+           "label": "Other (Not Open)"
+         },
+         {
+           "value": "other_open",
+           "label": "Other (Open)"
+         },
+         {
+           "value": "other_public_domain",
+           "label": "Other (Public Domain)"
+         },
+         {
+           "value": "ogl",
+           "label": "UK Open Government Licence (OGL)"
+         }
+      ]
+    },
+    {
+      "field_name": "politica_uso_uri",
+      "required": true,
+      "label": "URI políticas de uso"
+    },
+    {
+      "field_name": "terminos_uso",
+      "label": "Términos de uso",
+      "required": true,
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Descripción de los términos de uso."
+    },
+    {
+      "field_name": "licencia_abierta",
+      "label": "Licencia Abierta",
+      "required": true,
+      "help_text": "Si o No",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+         {
+           "value": "si",
+           "label": "Si"
+         },
+         {
+           "value": "no",
+           "label": "No"
+         }
+      ]
+    },
+    {
+      "field_name": "relaciones",
+      "preset": "repeating_group_fields",
+      "label": "Relaciones",
+      "field_name_subfields": ["subfield_tipo_relacion","subfield_uri_recurso_relacionado"],
+      "field_label_subfields": ["Tipo de Relación", "URI"],
+      "form_blanks": 8
+    },
+    {
+      "field_name": "subfield_tipo_relacion",
+      "preset": "repeating_select_basic",
+      "label": "Tipo de Relación",
+      "choices": [
+         {
+           "value": "cites",
+           "label": "cites"
+         },
+         {
+           "value": "isSupplementTo",
+           "label": "isSupplementTo"
+         },
+         {
+           "value": "isSupplementedBy",
+           "label": "isSupplementedBy"
+         },
+         {
+           "value": "isContinuedBy",
+           "label": "isContinuedBy"
+         },
+         {
+           "value": "Continues",
+           "label": "Continues"
+         },
+         {
+           "value": "HasMetadata",
+           "label": "HasMetadata"
+         },
+         {
+           "value": "isMetadataFor",
+           "label": "isMetadataFor"
+         },
+         {
+           "value": "isNewVersionFor",
+           "label": "isNewVersionFor"
+         },
+         { 
+           "value": "isPreviousVersionFor",
+           "label": "isPreviousVersionFor"
+         },
+         {
+           "value": "isPartOf",
+           "label": "isPartOf"
+         },
+         { 
+           "value": "HasPart",
+           "label": "HasPart"
+         },
+         { 
+           "value": "isReferencedBy",
+           "label": "isReferencedBy"
+         },
+         { 
+           "value": "References",
+           "label": "References"
+         },
+         { 
+           "value": "isDocumentedBy",
+           "label": "isDocumentedBy"
+         },
+        {  
+           "value": "Documents",
+           "label": "Documents"
+         },
+         {
+           "value": "IsCompiledBy",
+           "label": "IsCompiledBy"
+         },
+         {
+           "value": "Compiles",
+           "label": "Compiles"
+         },
+         {
+           "value": "IsVariantFormOf",
+           "label": "IsVariantFormOf"
+         },
+         {
+           "value": "IsOriginalFormOf",
+           "label": "IsOriginalFormOf"
+         },
+         {  
+           "value": "IsIdenticalOf",
+           "label": "IsIdenticalOf"
+         },
+         {
+           "value": "IsReviewedBy",
+           "label": "IsReviewedBy"
+         },
+        {  
+           "value": "Reviews",
+           "label": "Reviews"
+         },
+         {
+           "value": "IsDerivedFrom",
+           "label": "IsDerivedFrom"
+         },
+        {  
+           "value": "IsSourceOf",
+           "label": "IsSourceOf"
+         },
+         {
+           "value": "See",
+           "label": "See"
+         },
+         {
+           "value": "Appendix",
+           "label": "Appendix"
+         }
+      ],
+      "form_blanks": 8
+    },
+    {   
+      "field_name": "subfield_uri_recurso_relacionado",
+      "preset": "repeating_single_in_group_fields",
+      "label": "URI",
+      "form_blanks": 8
+    },
+    {
+      "field_name": "fecha_embargo",
+      "label": "Fecha de Embargo",
+      "form_placeholder": "Formato: a  o-mes-d  a     Ejemplo: 2016-09-25",
+      "preset": "date"
+    },
+    {
+      "field_name": "cita",
+      "label": "Cita",
+      "form_placeholder": ""
+    },
+    {
+      "field_name": "instrumedida",
+      "label": "Instrumentación de medida",
+      "form_placeholder": ""
+    },
+    {
+      "field_name": "numelementos",
+      "label": "Número de elementos",
       "validators": "ignore_missing int_validator",
       "form_placeholder": "eg. 2"
+    },
+    {
+      "field_name": "softrelacionado",
+      "label": "Software relacionado",
+      "form_placeholder": ""
+    },
+    {
+      "field_name": "quality",
+      "label": "Calidad",
+      "preset": "quality"
     }
-
   ],
   "resource_fields": [
     {

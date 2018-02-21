@@ -109,6 +109,26 @@
         "display_snippet": "datetime_tz.html",
         "validators": "scheming_isodatetime_tz convert_to_json_if_datetime"
       }
-    }
+    },
+    {
+      "preset_name": "tematic_agrovoc_name",
+      "values": {
+        "form_snippet": "slug_tematic_agrovoc.html",
+        "display_snippet": "slug_tematic_agrovoc.html",
+        "validators": "not_empty",
+        "form_attrs": {
+          "data-module": "autocomplete",
+          "data-module-tags": "",
+          "data-module-source": "http://agrovoc-inia.linkeddata.es/get_agrovoc_vocabulary?q=?"
+        }
+      }
+   },
+   {
+      "preset_name": "auto_text_vocabulary",
+      "values": {
+         "form_snippet": "auto_text_voc.html",
+         "display_snippet": "quto_text_voc.html"
+      }
+   }
   ]
 }
