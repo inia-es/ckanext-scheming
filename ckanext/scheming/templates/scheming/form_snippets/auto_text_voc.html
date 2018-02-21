@@ -1,0 +1,62 @@
+{% import 'macros/form.html' as form %}
+
+<script src="http://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+<script src="http://twitter.github.io/typeahead.js/js/jquery-1.10.2.min.js"></script>
+<script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+
+{%- set attrs = {
+    'data-module': 'autocomplete ' } -%}
+
+{% call form.input(
+    field.field_name,
+    id='field-' + field.field_name,
+    label=h.scheming_language_text(field.label),
+    placeholder=h.scheming_language_text(field.form_placeholder),
+    value=data[field.field_name],
+    error=errors[field.field_name],
+    attrs=attrs,
+    is_required=h.scheming_field_required(field)
+    )
+%}
+    {%- snippet 'scheming/form_snippets/help_text.html', field=field -%}
+{% endcall %}
+<script>
+var parameters = {
+        q: 'QUERY'
+    }
+
+var movies = new Bloodhound({
+  datumTokenizer: function(datum) {
+    return Bloodhound.tokenizers.whitespace(datum.value);
+  },
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+    wildcard: '%QUERY',
+    url: 'http://foris.fao.org/agrovoc/term/find?match=freeText&'+jQuery.param(parameters),
+    transform: function(response) {
+      // Map the remote source JSON array to a JavaScript object array
+      return $.map(response.results, function(movie) {
+        return {
+          value: movie.label
+        };
+      });
+    },
+    prepare: function(query, settings) {
+          settings.dataType = "jsonp"
+          settings.url = settings.url.replace('QUERY', query)
+          return settings;
+    }
+  }
+});
+
+function typeaheadCallback(json){
+        console.log("Typeahead callback response: ", json);
+        return json;
+    }
+
+// Instantiate the Typeahead UI
+$('#field-tematica').typeahead(null, {
+  display: 'value',
+  source: movies
+});
+</script>
