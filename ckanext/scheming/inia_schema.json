@@ -277,18 +277,19 @@
       "label": "DOI"
     },
     {
-      "field_name": "tematic_agrovoc_name",
-      "label": "temática",
-      "preset": "tematic_agrovoc_name",
-      "required": "true",
-      "form_placeholder": "Temática"
-    },
-    {
       "field_name": "tematica",
       "preset": "auto_text_vocabulary",
       "label": "Temática",
       "required": true,
-      "form_placeholder": "Campo o área de investigación"
+      "form_placeholder": "Campo o área de investigación",
+      "help_text": "Vocabulario correspondiente a Agrovoc"
+    },
+    {
+      "field_name": "tematica_url",
+      "label":"Url",
+      "requiered":true,
+      "form_placeholder": "Url del recurso en Agrovoc",
+      "help_text": "Url del recurso en Agrovoc"
     },
     {
       "field_name": "idioma",

@@ -127,8 +127,15 @@
       "preset_name": "auto_text_vocabulary",
       "values": {
          "form_snippet": "auto_text_voc.html",
-         "display_snippet": "quto_text_voc.html"
+         "display_snippet": "auto_text_voc.html"
       }
-   }
+   },
+   {
+      "preset_name": "quality",
+      "values": {
+        "form_snippet": "quality.html",
+        "display_snippet": "quality.html"
+      }
+    }
   ]
 }
