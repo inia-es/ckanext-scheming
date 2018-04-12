@@ -1,0 +1,25 @@
+{% import 'macros/form.html' as form %}
+
+
+{%- set attrs = {
+    'data-module': 'autocomplete',
+    'data-module-source': 'get_vocabulary(?)' } -%}
+
+{{ form.prepend(
+    field.field_name,
+    id='field-' + field.field_name,
+    label=h.scheming_language_text(field.label),
+    prepend=prefix,
+    placeholder=h.scheming_language_text(field.form_placeholder),
+    value=data[field.field_name],
+    error=errors[field.field_name],
+    attrs=attrs,
+    is_required=h.scheming_field_required(field)
+    ) }}
+
+<script>
+function get_vocabulary(){
+ base_url_vocabulary = 'http://foris.fao.org/agrovoc/term/find?match=freeText&q=?'
+ windows.alert('paso') 
+}
+</script>
