@@ -4,8 +4,6 @@
 <script src="http://twitter.github.io/typeahead.js/js/jquery-1.10.2.min.js"></script>
 <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 
-{%- set attrs = {
-    'data-module': 'autocomplete ' } -%}
 
 {% call form.input(
     field.field_name,
@@ -14,7 +12,6 @@
     placeholder=h.scheming_language_text(field.form_placeholder),
     value=data[field.field_name],
     error=errors[field.field_name],
-    attrs=attrs,
     is_required=h.scheming_field_required(field)
     )
 %}
@@ -58,5 +55,31 @@ function typeaheadCallback(json){
 $('#field-tematica').typeahead(null, {
   display: 'value',
   source: movies
+});
+
+
+$( "#field-tematica" ).change(function() {
+  $("#field-tematica_url").val("http://aims.fao.org/aos/agrovoc/c_"+9);
+$.ajax({
+    url: "http://foris.fao.org/agrovoc/term/find?match=freeText",
+ 
+    // The name of the callback parameter, as specified by the YQL service
+    jsonp: "callback",
+ 
+    // Tell jQuery we're expecting JSONP
+    dataType: "jsonp",
+ 
+    // Tell YQL what we want and that we want JSON
+    data: {
+        q: $( "#field-tematica" ).val()
+    },
+ 
+    // Work with the response
+    success: function( response ) {
+        console.log( response ); // server response
+        $("#field-tematica_url").val("http://aims.fao.org/aos/agrovoc/c_"+response.results[0].code);
+    }
+});
+
 });
 </script>
