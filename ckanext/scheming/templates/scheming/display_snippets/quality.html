@@ -1,6 +1,6 @@
 {%- set values = data[field.field_name] -%}
 {% if values != '' %}
-  {% set quality = values[0][1:-1].replace("'",'').split(',') %}
+  {% set quality = values[1:-1].replace("'",'').split(',') %}
 {% else %}
   {% set quality = [] %}
 {% endif %}
