@@ -6,8 +6,7 @@
     {
       "field_name": "title",
       "label": "Título 1",
-      "preset": "title",
-      "form_placeholder": "Plantas provenientes de ... "
+      "preset": "title"
     },
     {
       "field_name": "idiomatitulo1",
@@ -71,8 +70,11 @@
       "field_name": "autores",
       "preset": "repeating_group_fields",
       "label": "Autor",
+      "help_text": "Nombres de los principales investigadores",
+      "help_inline": true,
+      "form_placeholder": "Principales investigadores involucrados en la producción de los datos, por orden de prioridad",
       "field_name_subfields": ["subfield_email", "subfield_orcid","subfield_select_org_dep","subfield_select2_org_dep","subfield_other_organization"],
-      "field_label_subfields": ["Email", "Orcid", "Departamento", "Departamento INIA","Organizacion"],
+      "field_label_subfields": ["Email", "Orcid", "Institución", "Departamento INIA","Organizacion"],
       "form_blanks": 8
     },
     {
@@ -84,7 +86,7 @@
     {
       "field_name": "subfield_select_org_dep",
       "preset": "repeating_select_org_dep_in_group",
-      "label": "Departamento",
+      "label": "Institución",
       "field_name_subfields": ["subfield_select2_org_dep","subfield_other_organization"],
       "form_blanks": 8,
       "choices": [
@@ -94,7 +96,7 @@
          },
          {
            "value": "Otro",
-           "label": "Otro"
+           "label": "Otra"
          }
       ]
     },
