@@ -73,10 +73,78 @@
       "help_text": "Nombres de los principales investigadores",
       "help_inline": true,
       "form_placeholder": "Principales investigadores involucrados en la producción de los datos, por orden de prioridad",
-      "field_name_subfields": ["subfield_email", "subfield_orcid","subfield_select_org_dep","subfield_select2_org_dep","subfield_other_organization"],
-      "field_label_subfields": ["Email", "Orcid", "Institución", "Departamento INIA","Organizacion"],
+      "field_name_subfields": ["subfield_rol_autor", "subfield_email",  "subfield_orcid","subfield_select_org_dep","subfield_select2_org_dep","subfield_other_organization"],
+      "field_label_subfields": ["Rol", "Email", "Orcid", "Institución", "Departamento INIA","Organizacion"],
       "form_blanks": 8
     },
+    {
+      "field_name": "subfield_rol_autor",
+      "preset": "repeating_select_basic",
+      "label": "Rol",
+      "form_blanks": 8,
+      "choices": [
+         {
+           "value": "datacollector",
+           "label": "Data Collector"
+         },
+         {
+           "value": "datacuratos",
+           "label": "Data Curator"
+         },
+         {
+           "value": "datamanager",
+           "label": "Data Manager"
+         },
+         {
+           "value": "distributor",
+           "label": "Distributor"
+         },
+         {
+           "value": "editor",
+           "label": "Editor"
+         },
+         {
+           "value": "producer",
+           "label": "Producer"
+         },
+         {
+           "value": "projectleader",
+           "label": "Project Leader"
+         },
+         {
+           "value": "projectmanager",
+           "label": "Project Manager"
+         },
+         {
+           "value": "projectmember",
+           "label": "Project Member"
+         },
+         {
+           "value": "relatedperson",
+           "label": "Related Person"
+         },
+         {
+           "value": "researcher",
+           "label": "Researcher"
+         },
+         {
+           "value": "rightsholder",
+           "label": "Rights Holder"
+         },
+         {
+           "value": "supervisor",
+           "label": "Supervisor"
+         },
+         {
+           "value": "workpackageleader",
+           "label": "Work Package Leader"
+         },
+         {
+           "value": "other",
+           "label": "Other"
+         }
+      ]
+    },  
     {
       "field_name": "subfield_email",
       "preset": "repeating_single_in_group_fields",
@@ -128,12 +196,14 @@
       "field_name": "subfield_other_organization",
       "preset": "repeating_single_in_group_fields",
       "label": "Organization",
+      "form_placeholder": "Universidad / Departamento",
       "form_blanks": 8
     },
     {
       "field_name": "subfield_orcid",
       "preset": "repeating_single_in_group_fields",
       "label": "Orcid",
+      "form_placeholder": "https://orcid.org/XXX-XXX-XXX",
       "form_blanks": 8
     },
     {
@@ -156,6 +226,7 @@
       "field_name": "colaboradores",
       "preset": "repeating_group_fields",
       "label": "Colaborador",
+      "form_placeholder": "Otras personas que han participado en la elaboración del dataset",
       "field_name_subfields": ["subfield_select_rol", "subfield_organizacion_colaborador"],
       "field_label_subfields": ["Rol", "Organizacion"],
       "form_blanks": 8
@@ -187,10 +258,6 @@
            "label": "Editor"
          },
          {
-           "value": "hostinginstitution",
-           "label": "Hosting Institution"
-         },
-         {
            "value": "producer",
            "label": "Producer"
          },
@@ -207,14 +274,6 @@
            "label": "Project Member"
          },
          {
-           "value": "registrationagency",
-           "label": "Registration Agency"
-         },
-         {
-           "value": "registrationauthority",
-           "label": "Registration Authority"
-         },
-         {
            "value": "relatedperson",
            "label": "Related Person"
          },
@@ -223,16 +282,8 @@
            "label": "Researcher"
          },
          {
-           "value": "researchgroup",
-           "label": "Research Group"
-         },
-         {
            "value": "rightsholder",
            "label": "Rights Holder"
-         },
-         {
-           "value": "sponsor",
-           "label": "Sponsor"
          },
          {
            "value": "supervisor",
@@ -258,7 +309,7 @@
       "field_name": "organismo",
       "label": "Organismo",
       "required": true,
-      "field_text": "INIA",
+      "form_placeholder":"Entidad que alberga, activa, publica el dataset",
       "preset": "custom_text"
     },
     {
@@ -282,16 +333,16 @@
       "field_name": "tematica",
       "preset": "auto_text_vocabulary",
       "label": "Temática",
-      "required": true,
       "form_placeholder": "Campo o área de investigación",
-      "help_text": "Vocabulario correspondiente a Agrovoc"
+      "help_text": "Vocabulario correspondiente a Agrovoc",
+      "help_inline": true
     },
     {
       "field_name": "tematica_url",
       "label":"Url",
-      "requiered":true,
       "form_placeholder": "Url del recurso en Agrovoc",
-      "help_text": "Url del recurso en Agrovoc"
+      "help_text": "Url del recurso en Agrovoc",
+      "help_inline": true
     },
     {
       "field_name": "idioma",
@@ -350,7 +401,7 @@
       "field_name": "descripcion_ambitotemporal",
       "label": "Ámbito temporal (Descripciòn)",
       "form_snippet": "markdown.html",
-      "form_placeholder": "Descripción textual periodo de tiempo relacionado con el contenido o la toma de muestras del Dataset, este metadato está especialmente indicado en los ámbitos de investigación donde es habitual  expresar los periodos se de manera textual por ejemplos: siglo XVI, Edad media."
+      "form_placeholder": "Descripción textual del periodo de tiempo relacionado con el contenido o la toma de muestras del Dataset. Este metadato está especialmente indicado en los ámbitos de investigación donde es habitual  expresar los periodos se de manera textual por ejemplos: siglo XVI, Edad media."
     },
     {
       "field_name": "texto_ambitogeografico",
@@ -358,19 +409,19 @@
     },
     {
       "field_name": "latitudizq_ambitogeografico",
-      "label": "Ámbito Geográfico (latitud esquina superior)"
+      "label": "Ámbito Geográfico (N. Latitud)"
     },
     {
       "field_name": "longitudizq_ambitogeografico",
-      "label": "Ámbito Geográfico (longitud esquina superior)"
+      "label": "Ámbito Geográfico (O. Longitud)"
     },
     {
       "field_name": "latituddcha_ambitogeografico",
-      "label": "Ámbito Geográfico (latitud esquina inferior)"
+      "label": "Ámbito Geográfico (S. Latitud)"
     },
     {
       "field_name": "longituddcha_ambitogeografico",
-      "label": "Ámbito Geográfico (longitud esquina inferior)"
+      "label": "Ámbito Geográfico (E. Longitud)"
     },
    {
       "field_name": "taxonomias",
