@@ -69,6 +69,14 @@
       }
     },
     {
+      "preset_name": "select_license",
+      "values": {
+        "form_snippet": "select_license.html",
+        "display_snippet": "select_license.html",
+        "validators": "scheming_required scheming_choices"
+      }
+    },
+    {
       "preset_name": "multiple_checkbox",
       "values": {
         "form_snippet": "multiple_checkbox.html",
@@ -128,6 +136,20 @@
       "values": {
          "form_snippet": "auto_text_voc.html",
          "display_snippet": "auto_text_voc.html"
+      }
+   },
+   {
+      "preset_name": "license_uri",
+      "values": {
+         "form_snippet": "license_uri.html",
+         "display_snippet": "license_uri.html"
+      }
+   },
+   {
+      "preset_name": "license_terms",
+      "values": {
+         "form_snippet": "license_terms.html",
+         "display_snippet": "license_terms.html"
       }
    },
    {

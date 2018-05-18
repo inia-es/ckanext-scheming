@@ -68,8 +68,8 @@
     },
     {
       "field_name": "autores",
+      "label":"Autor",
       "preset": "repeating_group_fields",
-      "label": "Autor",
       "help_text": "Nombres de los principales investigadores",
       "help_inline": true,
       "form_placeholder": "Principales investigadores involucrados en la producción de los datos, por orden de prioridad",
@@ -471,6 +471,7 @@
       "field_name": "subfield_categoria_taxonomica_valor",
       "preset": "repeating_single_in_group_fields",
       "label": "Categoría Taxonómica (Valor)",
+      "form_placeholder":"Plantae | Tracheophyta | Pinopsida | Pinales | Pinaceae",
       "form_blanks": 8
     },
     {
@@ -489,7 +490,7 @@
       "field_name": "politicas_de_uso",
       "label": "Políticas de Uso",
       "required": true,
-      "preset": "select",
+      "preset": "select_license",
       "choices": [
          {
            "value": "creative_commons_attribution",
@@ -555,15 +556,13 @@
     },
     {
       "field_name": "politica_uso_uri",
-      "required": true,
-      "label": "URI políticas de uso"
+      "label": "URI políticas de uso",
+      "preset": "license_uri"
     },
     {
       "field_name": "terminos_uso",
       "label": "Términos de uso",
-      "required": true,
-      "form_snippet": "markdown.html",
-      "form_placeholder": "Descripción de los términos de uso."
+      "preset": "license_terms"
     },
     {
       "field_name": "licencia_abierta",
@@ -586,7 +585,7 @@
     {
       "field_name": "relaciones",
       "preset": "repeating_group_fields",
-      "label": "Relaciones",
+      "label": "Recurso relacionado",
       "field_name_subfields": ["subfield_tipo_relacion","subfield_uri_recurso_relacionado"],
       "field_label_subfields": ["Tipo de Relación", "URI"],
       "form_blanks": 8
@@ -718,7 +717,7 @@
     {
       "field_name": "cita",
       "label": "Cita",
-      "form_placeholder": ""
+      "form_placeholder": "Varona Luis, ., Diaz Clara, ., Piedrafita Jesus, ., Baro Jesus Angel, ., Molina, A., & Altarriba, J. (2016). Genotypes for the Spanish Autochthonous Beef Cattle Populations [Data set]. Zenodo. http://doi.org/10.5281/zenodo.58595"
     },
     {
       "field_name": "instrumedida",
@@ -734,7 +733,7 @@
     {
       "field_name": "softrelacionado",
       "label": "Software relacionado",
-      "form_placeholder": ""
+      "form_placeholder": "SAS, Arc GIS, BLAST"
     },
     {
       "field_name": "quality",
