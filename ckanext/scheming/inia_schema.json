@@ -150,7 +150,14 @@
       "preset": "repeating_single_in_group_fields",
       "label": "Email",
       "form_blanks": 8
-    },   
+    }, 
+    {
+      "field_name": "subfield_orcid",
+      "preset": "repeating_single_in_group_fields",
+      "label": "Orcid",
+      "form_placeholder": "https://orcid.org/XXX-XXX-XXX",
+      "form_blanks": 8
+    },  
     {
       "field_name": "subfield_select_org_dep",
       "preset": "repeating_select_org_dep_in_group",
@@ -197,13 +204,6 @@
       "preset": "repeating_single_in_group_fields",
       "label": "Organization",
       "form_placeholder": "Universidad / Departamento",
-      "form_blanks": 8
-    },
-    {
-      "field_name": "subfield_orcid",
-      "preset": "repeating_single_in_group_fields",
-      "label": "Orcid",
-      "form_placeholder": "https://orcid.org/XXX-XXX-XXX",
       "form_blanks": 8
     },
     {
