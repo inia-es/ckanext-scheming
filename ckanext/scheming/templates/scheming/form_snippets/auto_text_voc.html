@@ -59,7 +59,10 @@ $('#field-tematica').typeahead(null, {
 
 
 $( "#field-tematica" ).change(function() {
-  $("#field-tematica_url").val("http://aims.fao.org/aos/agrovoc/c_"+9);
+  var term = $( "#field-tematica" ).val();
+
+  $("#field-tematica_url").val("http://data.inia.es/terms/"+term);
+
 $.ajax({
     url: "http://foris.fao.org/agrovoc/term/find?match=freeText",
  
