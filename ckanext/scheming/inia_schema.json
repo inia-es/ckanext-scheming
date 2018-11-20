@@ -309,8 +309,7 @@
       "field_name": "organismo",
       "label": "Organismo",
       "required": true,
-      "form_placeholder":"Entidad que alberga, activa, publica el dataset",
-      "preset": "custom_text"
+      "form_placeholder":"Entidad que alberga, activa, publica el dataset"
     },
     {
       "field_name": "fechapublicaion",
