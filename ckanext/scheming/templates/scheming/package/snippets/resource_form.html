@@ -16,6 +16,9 @@
     might not be compatible with ckanext-scheming
     </p>
   {%- endif -%}
+  <p style="color:red">
+   (*) Subir un dataset al repositorio REDIA implica la aceptación de los <a href="http://rdm.inia.es/pages/licencia-deposito-de-datos">términos y condiciones</a> del portal, recuerde que tamaño máximo de un Dataset es de 10 MB. 
+  </p>
   {%- set schema = h.scheming_get_dataset_schema(dataset_type) -%}
   {%- for field in schema.resource_fields -%}
     {%- snippet 'scheming/snippets/form_field.html',
